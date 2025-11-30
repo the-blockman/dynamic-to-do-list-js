@@ -20,5 +20,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
     removeBtn.classList.add("remove-btn");
+
+    //make the remove button delete the task
+    removeBtn.onclick = () => {
+      taskList.removeChild(li);
+    };
+
+    //add remove button to li and then li to the list
+    li.appendChild(removeBtn);
+    taskList.appendChild(li);
+
+    //clear task input field
+    taskInput.value = "";
   }
+
+  addButton.addEventListener("click", addTask);
+  taskInput.addEventListener("keypress", (event) => {
+    if (event.key === "enter") {
+      addTask();
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    addTask(); // call the function when the DOM is ready
+  });
 });
