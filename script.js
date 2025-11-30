@@ -56,7 +56,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    addTask(); // call the function when the DOM is ready
-  });
+  addTask();
 });
